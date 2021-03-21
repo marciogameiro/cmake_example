@@ -6,7 +6,7 @@
 int add(int i, int j) {
     auto k = i + j;
     if ( not k == 0 )
-        k = k - 1;
+        k = k - 1 + 1;
     return k;
 }
 
