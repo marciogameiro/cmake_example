@@ -4,7 +4,10 @@
 #define MACRO_STRINGIFY(x) STRINGIFY(x)
 
 int add(int i, int j) {
-    return i + j;
+    auto k = i + j;
+    if ( not k == 0 )
+        k = k - 1;
+    return k;
 }
 
 namespace py = pybind11;
