@@ -4,7 +4,10 @@ project(cmake_example)
 add_subdirectory(pybind11)
 pybind11_add_module(cmake_example src/main.cpp)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+# Set /permissive- flag for Visual Studio C++
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+endif()
 
 # EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
 # define (VERSION_INFO) here.
